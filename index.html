@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>LunAtlas — Céleste</title>
+  <meta name="description" content="Céleste, the debut EP by LunAtlas. Listen now on Spotify, YouTube Music, Apple Music or Deezer." />
+  <meta name="theme-color" content="#07131f" />
+  <meta property="og:title" content="LunAtlas — Céleste" />
+  <meta property="og:description" content="Debut EP · Out now" />
+  <meta property="og:type" content="music.album" />
+  <meta property="og:image" content="celeste.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '3047616205444074');
+    fbq('track', 'PageView');
+  </script>
+
+  <style>
+    :root {
+      --ink: #07131f;
+      --ink-2: #0b1d2d;
+      --paper: #f5f7f7;
+      --muted: rgba(245,247,247,.66);
+      --line: rgba(255,255,255,.16);
+      --surface: rgba(7,19,31,.68);
+      --surface-hover: rgba(12,30,46,.88);
+      --accent: #8bb9d5;
+      --shadow: 0 20px 60px rgba(0,0,0,.34);
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      background: var(--ink);
+      color: var(--paper);
+      font-family: "Manrope", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      min-height: 100svh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: -8%;
+      z-index: -3;
+      background:
+        linear-gradient(rgba(4,12,20,.64), rgba(4,12,20,.84)),
+        url("celeste.jpg") center / cover no-repeat;
+      filter: blur(34px) saturate(.82);
+      transform: scale(1.08);
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background:
+        radial-gradient(circle at 50% 8%, rgba(139,185,213,.16), transparent 38%),
+        linear-gradient(to bottom, rgba(2,8,14,.10), rgba(2,8,14,.44));
+      pointer-events: none;
+    }
+
+    .page {
+      width: min(100%, 520px);
+      margin: 0 auto;
+      padding: max(28px, env(safe-area-inset-top)) 20px max(42px, env(safe-area-inset-bottom));
+    }
+
+    .hero {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .brand {
+      margin: 2px 0 18px;
+      font-size: 14px;
+      line-height: 1;
+      font-weight: 600;
+      letter-spacing: .48em;
+      text-transform: uppercase;
+      padding-left: .48em;
+      color: rgba(245,247,247,.88);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 26px;
+      margin: 0 0 10px;
+      padding: 0 10px;
+      border: 1px solid rgba(139,185,213,.38);
+      border-radius: 999px;
+      background: rgba(139,185,213,.08);
+      color: #b9d4e4;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(40px, 11vw, 58px);
+      line-height: .98;
+      font-weight: 500;
+      letter-spacing: .16em;
+      padding-left: .16em;
+      text-transform: uppercase;
+      text-shadow: 0 4px 30px rgba(0,0,0,.28);
+    }
+
+    .subline {
+      margin: 12px 0 22px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .20em;
+      text-transform: uppercase;
+    }
+
+    .listen-label {
+      width: 100%;
+      margin: 0 0 10px;
+      color: rgba(245,247,247,.82);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+    }
+
+    .platforms {
+      width: 100%;
+      display: grid;
+      gap: 10px;
+    }
+
+    .platform {
+      position: relative;
+      min-height: 66px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 38px minmax(0,1fr) auto;
+      align-items: center;
+      gap: 12px;
+      padding: 11px 16px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--surface);
+      box-shadow: 0 8px 28px rgba(0,0,0,.14);
+      color: var(--paper);
+      text-decoration: none;
+      text-align: left;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      transform: translateZ(0);
+      transition: transform .18s ease, background .18s ease, border-color .18s ease, box-shadow .18s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .platform:first-child {
+      border-color: rgba(139,185,213,.42);
+      box-shadow: 0 10px 34px rgba(0,0,0,.18), inset 0 0 0 1px rgba(139,185,213,.05);
+    }
+
+    .platform:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    .platform:active { transform: scale(.985); }
+
+    .icon-wrap {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 11px;
+      background: rgba(255,255,255,.055);
+      border: 1px solid rgba(255,255,255,.08);
+    }
+
+    .icon-wrap img {
+      width: 22px;
+      height: 22px;
+      display: block;
+    }
+
+    .platform-name {
+      min-width: 0;
+      font-size: 15px;
+      font-weight: 650;
+      letter-spacing: -.01em;
+      white-space: nowrap;
+    }
+
+    .action {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      color: rgba(245,247,247,.70);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+    }
+
+    .arrow {
+      display: inline-block;
+      font-size: 20px;
+      line-height: 1;
+      font-weight: 400;
+      transform: translateX(0);
+      transition: transform .18s ease;
+    }
+
+    .artwork-wrap {
+      margin: 28px auto 0;
+      width: min(82%, 360px);
+    }
+
+    .artwork {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 3px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,.11);
+    }
+
+    .footer {
+      margin: 22px 0 0;
+      text-align: center;
+      color: rgba(245,247,247,.38);
+      font-size: 9px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    @media (hover:hover) and (pointer:fine) {
+      .platform:hover {
+        transform: translateY(-2px);
+        background: var(--surface-hover);
+        border-color: rgba(255,255,255,.28);
+        box-shadow: 0 13px 36px rgba(0,0,0,.22);
+      }
+
+      .platform:hover .arrow { transform: translateX(4px); }
+    }
+
+    @media (min-width: 760px) {
+      .page {
+        width: min(100%, 560px);
+        padding-top: 42px;
+      }
+
+      .brand { margin-bottom: 22px; }
+      .subline { margin-bottom: 25px; }
+      .platform { min-height: 70px; }
+      .artwork-wrap { margin-top: 34px; }
+    }
+
+    @media (max-height: 740px) and (max-width: 600px) {
+      .page { padding-top: 20px; }
+      .brand { margin-bottom: 12px; }
+      .eyebrow { margin-bottom: 7px; }
+      h1 { font-size: 38px; }
+      .subline { margin: 9px 0 15px; }
+      .platforms { gap: 8px; }
+      .platform { min-height: 60px; }
+      .artwork-wrap { margin-top: 24px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { scroll-behavior: auto !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=3047616205444074&ev=PageView&noscript=1"
+      alt="" />
+  </noscript>
+
+  <main class="page">
+    <section class="hero" aria-labelledby="release-title">
+      <div class="brand">LunAtlas</div>
+      <div class="eyebrow">New</div>
+      <h1 id="release-title">Céleste</h1>
+      <p class="subline">Debut EP · Out now</p>
+
+      <div class="listen-label">Listen now</div>
+
+      <div class="platforms" aria-label="Choose a streaming platform">
+        <a class="platform" href="https://open.spotify.com/intl-fr/album/6fXMnmQQDEJg6eAEZm63BC" target="_blank" rel="noopener noreferrer" data-event="Spotify_Click">
+          <span class="icon-wrap"><img src="https://cdn.simpleicons.org/spotify/1ED760" alt="" /></span>
+          <span class="platform-name">Spotify</span>
+          <span class="action">Listen <span class="arrow" aria-hidden="true">→</span></span>
+        </a>
+
+        <a class="platform" href="https://music.youtube.com/playlist?list=OLAK5uy_lsL54icNhxJbmZalFAGaXEgBpcSnUgqkc&si=q_Kd0wi9cy4cU4vn" target="_blank" rel="noopener noreferrer" data-event="YouTube_Click">
+          <span class="icon-wrap"><img src="https://cdn.simpleicons.org/youtubemusic/FF0000" alt="" /></span>
+          <span class="platform-name">YouTube Music</span>
+          <span class="action">Listen <span class="arrow" aria-hidden="true">→</span></span>
+        </a>
+
+        <a class="platform" href="https://music.apple.com/us/album/c%C3%A9leste-ep/6794076441" target="_blank" rel="noopener noreferrer" data-event="AppleMusic_Click">
+          <span class="icon-wrap"><img src="https://cdn.simpleicons.org/applemusic/FA243C" alt="" /></span>
+          <span class="platform-name">Apple Music</span>
+          <span class="action">Listen <span class="arrow" aria-hidden="true">→</span></span>
+        </a>
+
+        <a class="platform" href="https://www.deezer.com/en/album/1036475892" target="_blank" rel="noopener noreferrer" data-event="Deezer_Click">
+          <span class="icon-wrap"><img src="https://cdn.simpleicons.org/deezer/A238FF" alt="" /></span>
+          <span class="platform-name">Deezer</span>
+          <span class="action">Listen <span class="arrow" aria-hidden="true">→</span></span>
+        </a>
+      </div>
+
+      <figure class="artwork-wrap">
+        <img class="artwork" src="celeste.jpg" alt="Céleste — LunAtlas EP artwork" />
+      </figure>
+
+      <div class="footer">LunAtlas · Geneva</div>
+    </section>
+  </main>
+
+  <script>
+    document.querySelectorAll('[data-event]').forEach(function(link) {
+      link.addEventListener('click', function() {
+        if (typeof fbq === 'function') {
+          fbq('trackCustom', link.dataset.event);
+          fbq('trackCustom', 'MusicPlatformClick', {
+            platform: link.querySelector('.platform-name')?.textContent || ''
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
