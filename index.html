@@ -7,7 +7,7 @@
   <meta name="description" content="Céleste, the debut EP by LunAtlas. Listen now on Spotify, YouTube Music, Apple Music or Deezer." />
   <meta name="theme-color" content="#07131f" />
   <meta property="og:title" content="LunAtlas — Céleste" />
-  <meta property="og:description" content="Debut EP · Out now" />
+  <meta property="og:description" content="Out now" />
   <meta property="og:type" content="music.album" />
   <meta property="og:image" content="celeste-web.jpg" />
 
@@ -67,11 +67,11 @@
       inset: -10%;
       z-index: -2;
       background:
-        linear-gradient(rgba(3,10,17,.40), rgba(3,10,17,.68)),
+        linear-gradient(rgba(2,7,12,.68), rgba(2,7,12,.88)),
         url("celeste-web.jpg") 50% 42% / cover no-repeat;
-      filter: blur(42px) saturate(.78) contrast(.96);
+      filter: blur(42px) saturate(.68) brightness(.55) contrast(1.05);
       transform: scale(1.12);
-      opacity: .98;
+      opacity: 1;
       pointer-events: none;
     }
 
@@ -81,9 +81,9 @@
       inset: 0;
       z-index: -1;
       background:
-        radial-gradient(circle at 50% 2%, rgba(206,229,241,.16), transparent 31%),
-        radial-gradient(circle at 18% 48%, rgba(91,151,190,.12), transparent 33%),
-        linear-gradient(to bottom, rgba(2,8,14,.08), rgba(2,8,14,.40));
+        radial-gradient(circle at 50% 0%, rgba(120,150,180,.10), transparent 28%),
+        radial-gradient(circle at 18% 48%, rgba(35,74,110,.16), transparent 34%),
+        linear-gradient(to bottom, rgba(2,6,10,.18), rgba(2,6,10,.46));
       pointer-events: none;
     }
 
@@ -101,61 +101,59 @@
     }
 
     .brand {
-      margin: 2px 0 13px;
+      margin: 2px 0 11px;
       font-family: "Jura", sans-serif;
-      font-size: 14px;
+      font-size: 15px;
       line-height: 1;
       font-weight: 600;
-      letter-spacing: .48em;
+      letter-spacing: .62em;
       text-transform: uppercase;
-      padding-left: .48em;
-      color: rgba(245,247,247,.92);
+      padding-left: .62em;
+      color: rgba(245,247,247,.90);
     }
 
     .eyebrow {
-      display: inline-flex;
+      display: block;
       font-family: "Jura", sans-serif;
-      align-items: center;
-      justify-content: center;
-      min-height: 24px;
-      margin: 0 0 7px;
-      padding: 0 10px;
-      border: 1px solid rgba(139,185,213,.38);
-      border-radius: 999px;
-      background: rgba(139,185,213,.08);
-      color: #b9d4e4;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: .24em;
+      min-height: 0;
+      margin: 0 0 6px;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      color: rgba(180,200,214,.72);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .34em;
       text-transform: uppercase;
     }
 
     h1 {
       margin: 0;
       font-family: "Jura", sans-serif;
-      font-size: clamp(44px, 11vw, 62px);
-      line-height: .96;
+      font-size: clamp(38px, 9.8vw, 54px);
+      line-height: .98;
       font-weight: 500;
-      letter-spacing: .22em;
-      padding-left: .22em;
+      letter-spacing: .28em;
+      padding-left: .28em;
       text-transform: uppercase;
-      text-shadow: 0 5px 34px rgba(0,0,0,.34);
+      text-shadow: 0 5px 34px rgba(0,0,0,.38);
     }
 
     .subline {
-      margin: 9px 0 16px;
+      margin: 7px 0 12px;
       font-family: "Jura", sans-serif;
-      color: rgba(245,247,247,.70);
+      color: rgba(245,247,247,.62);
       font-size: 10px;
       font-weight: 600;
-      letter-spacing: .21em;
+      letter-spacing: .28em;
       text-transform: uppercase;
     }
 
     .listen-label {
       width: 100%;
       font-family: "Jura", sans-serif;
-      margin: 0 0 8px;
+      margin: 0 0 6px;
       color: rgba(245,247,247,.82);
       font-size: 11px;
       font-weight: 700;
@@ -166,18 +164,18 @@
     .platforms {
       width: 100%;
       display: grid;
-      gap: 9px;
+      gap: 7px;
     }
 
     .platform {
       position: relative;
-      min-height: 72px;
+      min-height: 66px;
       width: 100%;
       display: grid;
       grid-template-columns: 38px minmax(0,1fr) auto;
       align-items: center;
       gap: 12px;
-      padding: 13px 17px;
+      padding: 11px 16px;
       border: 1px solid rgba(255,255,255,.21);
       border-radius: 16px;
       background:
@@ -254,7 +252,7 @@
     }
 
     .artwork-wrap {
-      margin: 26px auto 0;
+      margin: 24px auto 0;
       width: min(78%, 340px);
     }
 
@@ -296,22 +294,22 @@
         padding-top: 30px;
       }
 
-      .brand { margin-bottom: 15px; }
-      .subline { margin-bottom: 18px; }
-      .platform { min-height: 74px; }
-      .artwork-wrap { margin-top: 30px; }
+      .brand { margin-bottom: 12px; }
+      .subline { margin-bottom: 14px; }
+      .platform { min-height: 68px; }
+      .artwork-wrap { margin-top: 26px; }
     }
 
     @media (max-height: 740px) and (max-width: 600px) {
       .page { padding-top: 16px; }
-      .brand { margin-bottom: 10px; }
-      .eyebrow { margin-bottom: 6px; }
-      h1 { font-size: 40px; letter-spacing: .18em; padding-left: .18em; }
-      .subline { margin: 7px 0 12px; }
-      .listen-label { margin-bottom: 6px; }
-      .platforms { gap: 7px; }
-      .platform { min-height: 64px; padding-top: 10px; padding-bottom: 10px; }
-      .artwork-wrap { margin-top: 22px; }
+      .brand { margin-bottom: 8px; }
+      .eyebrow { margin-bottom: 5px; }
+      h1 { font-size: 36px; letter-spacing: .24em; padding-left: .24em; }
+      .subline { margin: 6px 0 10px; }
+      .listen-label { margin-bottom: 5px; }
+      .platforms { gap: 6px; }
+      .platform { min-height: 60px; padding-top: 9px; padding-bottom: 9px; }
+      .artwork-wrap { margin-top: 20px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -331,7 +329,7 @@
       <div class="brand" aria-label="LunAtlas">LUNΔTLAS</div>
       <div class="eyebrow">New</div>
       <h1 id="release-title">Céleste</h1>
-      <p class="subline">Debut EP · Out now</p>
+      <p class="subline">Out now</p>
 
       <div class="listen-label">Listen now</div>
 
